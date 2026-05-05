@@ -1,0 +1,260 @@
+/* ── Page shell ──────────────────────────────────────────────────── */
+body {
+  background: #e8e0d4;
+  padding: 0;
+  align-items: center;
+}
+
+.scenario-shell {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #f2ece2;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 0 1.5rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  background: #f2ece2;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.15s;
+}
+.close-btn:hover { background: #ddd; }
+
+/* ── Instruction banner ──────────────────────────────────────────── */
+.instruction-banner {
+  margin: 1.75rem 2rem 0;
+  padding: 1rem 1.5rem;
+  border: 2.5px solid #2d3748;
+  border-radius: 10px;
+  background: #f9f6f0;
+}
+
+.instruction-banner p {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a202c;
+  line-height: 1.35;
+}
+
+/* ── Middle row ──────────────────────────────────────────────────── */
+.scene-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  padding: 1.5rem 2rem 0;
+  flex: 1;
+  align-items: flex-start;
+}
+
+/* Illustration panel */
+.illustration-panel {
+  flex: 0 0 auto;
+  width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.illustration-frame {
+  flex: 1;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  background: #faf8f4;
+  overflow: hidden;
+}
+
+.illustration-frame svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Nav arrows */
+.nav-arrow {
+  width: 32px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.nav-arrow:hover { color: #333; }
+.nav-arrow.left  { margin-right: 4px; }
+.nav-arrow.right { margin-left: 4px; }
+
+/* Vertical divider */
+.scene-row::after {
+  content: '';
+  display: block;
+  width: 1.5px;
+  background: #c8bfb0;
+  align-self: stretch;
+  margin: 0 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Situation panel */
+.situation-panel {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.situation-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.situation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.situation-list li {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.97rem;
+  color: #1a202c;
+  line-height: 1.5;
+}
+
+.situation-list li::before {
+  content: '–';
+  flex-shrink: 0;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* ── Answer area ─────────────────────────────────────────────────── */
+.answer-area {
+  margin: 1.75rem 2rem 0;
+}
+
+.answer-label {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 0.6rem;
+}
+
+.bullet-field {
+  border: 2px solid #2d3748;
+  border-radius: 6px;
+  background: #faf8f4;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 110px;
+}
+
+.bullet-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.bullet-row:last-child {
+  border-bottom: none;
+}
+
+.bullet-dash {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d3748;
+  flex-shrink: 0;
+}
+
+.bullet-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.97rem;
+  color: #1a202c;
+  outline: none;
+  font-family: inherit;
+  padding: 0;
+}
+
+.bullet-input::placeholder {
+  color: #bbb;
+}
+
+/* ── Bottom nav ──────────────────────────────────────────────────── */
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem 0;
+}
+
+/* reuse shared button styles; scenario page also needs them inline */
+.btn-primary {
+  padding: 0.7rem 1.5rem;
+  background: #667eea;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: #5a67d8; }
+
+.btn-secondary {
+  padding: 0.7rem 1.25rem;
+  background: transparent;
+  color: #667eea;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-secondary:hover { background: #667eea; color: #fff; }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .scene-row { flex-direction: column; }
+  .illustration-panel { width: 100%; }
+  .scene-row::after { width: 100%; height: 1.5px; margin: 1rem 0; }
+}

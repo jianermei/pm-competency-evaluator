@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Competency Evaluator – Simulation Result</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="result.css" />
+</head>
+<body>
+  <div class="result-shell">
+
+    <!-- Title bar -->
+    <div class="title-bar">
+      <span class="title-dots"><span></span><span></span><span></span></span>
+      <span class="title-text">Simulation Result</span>
+    </div>
+
+    <!-- Upper section: illustration + sidebar -->
+    <div class="upper-section">
+
+      <!-- Illustration (reused from scenario) -->
+      <div class="scene-panel">
+        <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg">
+          <rect width="520" height="320" fill="#f5f0e8"/>
+          <rect x="0" y="265" width="520" height="55" fill="#e8e0d0"/>
+          <rect x="0" y="0" width="520" height="268" fill="#ede8dc"/>
+          <!-- Table -->
+          <rect x="100" y="200" width="200" height="10" rx="3" fill="#c8b89a"/>
+          <rect x="110" y="210" width="8" height="55" fill="#b8a88a"/>
+          <rect x="280" y="210" width="8" height="55" fill="#b8a88a"/>
+          <!-- Laptop -->
+          <rect x="140" y="168" width="90" height="50" rx="4" fill="#555"/>
+          <rect x="144" y="172" width="82" height="40" rx="2" fill="#89c4e1"/>
+          <rect x="152" y="198" width="8" height="10" fill="#4a90d9"/>
+          <rect x="164" y="192" width="8" height="16" fill="#4a90d9"/>
+          <rect x="176" y="186" width="8" height="22" fill="#4a90d9"/>
+          <rect x="188" y="180" width="8" height="28" fill="#4a90d9"/>
+          <rect x="140" y="218" width="90" height="4" rx="2" fill="#444"/>
+          <!-- Coffee -->
+          <rect x="258" y="188" width="15" height="16" rx="3" fill="#d4a574"/>
+          <!-- Chart on wall -->
+          <rect x="200" y="30" width="130" height="95" rx="4" fill="white" stroke="#ccc" stroke-width="1.5"/>
+          <text x="213" y="46" font-size="8" fill="#333" font-family="sans-serif" font-weight="bold">Project Priority Chart</text>
+          <line x1="216" y1="112" x2="216" y2="56" stroke="#666" stroke-width="1.5"/>
+          <line x1="216" y1="112" x2="320" y2="112" stroke="#666" stroke-width="1.5"/>
+          <rect x="225" y="90"  width="13" height="22" fill="#aaa"/>
+          <rect x="243" y="78"  width="13" height="34" fill="#888"/>
+          <rect x="261" y="65"  width="13" height="47" fill="#667eea"/>
+          <rect x="279" y="56"  width="13" height="56" fill="#667eea"/>
+          <defs>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#c0392b"/>
+            </marker>
+          </defs>
+          <line x1="305" y1="75" x2="292" y2="75" stroke="#c0392b" stroke-width="2" marker-end="url(#arr)"/>
+          <!-- PM seated -->
+          <ellipse cx="95" cy="168" rx="20" ry="26" fill="#d4a88a"/>
+          <circle cx="95" cy="133" r="18" fill="#f0c8a0"/>
+          <ellipse cx="95" cy="120" rx="18" ry="9" fill="#5a3e28"/>
+          <!-- VP -->
+          <rect x="318" y="140" width="42" height="72" rx="6" fill="#4a6fa5"/>
+          <polygon points="339,143 343,143 344,178 339,183 334,178" fill="#c0392b"/>
+          <circle cx="339" cy="125" r="18" fill="#f0c8a0"/>
+          <ellipse cx="339" cy="112" rx="18" ry="9" fill="#3a2a1a"/>
+          <line x1="318" y1="168" x2="272" y2="150" stroke="#4a6fa5" stroke-width="7" stroke-linecap="round"/>
+          <rect x="321" y="212" width="14" height="48" rx="4" fill="#2c3e50"/>
+          <rect x="339" y="212" width="14" height="48" rx="4" fill="#2c3e50"/>
+          <!-- Tech Lead -->
+          <rect x="418" y="142" width="42" height="70" rx="6" fill="#6c757d"/>
+          <path d="M416 172 Q428 182 440 172 Q452 162 462 172" stroke="#555" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <circle cx="439" cy="126" r="17" fill="#f0c8a0"/>
+          <ellipse cx="439" cy="114" rx="17" ry="8" fill="#222"/>
+          <rect x="421" y="212" width="14" height="48" rx="4" fill="#343a40"/>
+          <rect x="438" y="212" width="14" height="48" rx="4" fill="#343a40"/>
+        </svg>
+      </div>
+
+      <!-- Right sidebar: topic + final result -->
+      <div class="result-sidebar">
+        <div class="topic-card">
+          <p class="card-eyebrow">Topic</p>
+          <p class="topic-name" id="topic-name">PM Process</p>
+          <p class="topic-sub" id="topic-sub">Prioritization under pressure</p>
+        </div>
+
+        <div class="verdict-card" id="verdict-card">
+          <p class="card-eyebrow">Final Result</p>
+          <div class="verdict-badge" id="verdict-badge">Good</div>
+          <div class="verdict-stars" id="verdict-stars">★★★☆☆</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="section-divider" />
+
+    <!-- Summary section -->
+    <div class="summary-section">
+      <div class="summary-text">
+        <h2 class="summary-heading">Summary</h2>
+        <ul class="summary-list" id="summary-list">
+          <!-- filled by JS -->
+        </ul>
+      </div>
+      <div class="summary-chart">
+        <canvas id="radar-chart" width="220" height="220"></canvas>
+      </div>
+    </div>
+
+    <!-- Bottom nav -->
+    <div class="bottom-nav">
+      <button class="btn-secondary" onclick="history.back()">← Back to Scenario</button>
+      <div style="display:flex;gap:0.75rem;">
+        <button class="btn-secondary" id="next-scenario-btn">Next Scenario →</button>
+        <button class="btn-primary" id="final-results-btn">See Final Results ✦</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="result.js"></script>
+</body>
+</html>

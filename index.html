@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Competency Evaluator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PM Competency Evaluator</h1>
+      <p class="subtitle">Answer two quick questions to identify the competencies most relevant to you.</p>
+    </header>
+
+    <main>
+      <form id="quiz-form">
+        <!-- Question 1 -->
+        <div class="question-card" id="q1">
+          <p class="question-number">Question 1 of 2</p>
+          <h2>How much experience do you have?</h2>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="experience" value="new" />
+              <span class="option-content">
+                <span class="option-title">New PM</span>
+                <span class="option-detail">0–2 years</span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="experience" value="mid" />
+              <span class="option-content">
+                <span class="option-title">Mid-level PM</span>
+                <span class="option-detail">3–7 years</span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="experience" value="experienced" />
+              <span class="option-content">
+                <span class="option-title">Experienced PM</span>
+                <span class="option-detail">8+ years</span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="experience" value="director" />
+              <span class="option-content">
+                <span class="option-title">Director / CPO</span>
+                <span class="option-detail">15+ years</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-card" id="q2">
+          <p class="question-number">Question 2 of 2</p>
+          <h2>Which best describes your company's size?</h2>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="company" value="startup" />
+              <span class="option-content">
+                <span class="option-title">Startup</span>
+                <span class="option-detail">1 – several dozen employees</span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="company" value="emerging" />
+              <span class="option-content">
+                <span class="option-title">Emerging Organization</span>
+                <span class="option-detail">Several dozen – several hundreds</span>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="company" value="enterprise" />
+              <span class="option-content">
+                <span class="option-title">Enterprise Organization</span>
+                <span class="option-detail">1,000+ employees</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn" disabled>Determine My Evaluating Competencies</button>
+      </form>
+
+      <!-- Result placeholder -->
+      <div id="result" class="result hidden">
+        <h2>Your Profile</h2>
+        <p id="result-text"></p>
+        <button id="restart-btn">Start Over</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Competency Evaluator – Final Results</title>
+  <link rel="stylesheet" href="final.css" />
+</head>
+<body>
+  <div class="page">
+
+    <!-- ── LEFT PANEL ─────────────────────────────────────────── -->
+    <div class="left-panel">
+
+      <div class="left-content">
+        <h1 class="career-headline" id="career-headline">Set Yourself up<br>for a Director Role</h1>
+
+        <p class="career-body" id="career-body">
+          Trained Managers of Product Management often meet or exceed untrained Directors
+          in multiple skill sets — like PM Process and Requirements — while others show
+          negligible gaps, setting themselves up for promotion. We start to see huge
+          increases with trained Directors setting themselves up for further advancement.
+        </p>
+
+        <!-- Competencies to improve -->
+        <div class="improve-block">
+          <p class="improve-intro">To fully prepare to take on the next role, these skill sets are the ones where more study may be needed:</p>
+          <div class="improve-row">
+            <div class="improve-tags" id="improve-tags">
+              <!-- filled by JS -->
+            </div>
+            <div class="improve-arrow">
+              <div class="arrow-line"></div>
+              <span class="arrow-label" id="arrow-label">Path to<br>Director</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <p class="cta-text">
+          As you're looking to advance, start by
+          <a href="#" class="cta-link">making a plan</a>
+          customized for you to practice, then get instant feedback from our expert AI to
+          understand your strengths and determine any gaps. Try it now as a 14-day free trial!
+        </p>
+      </div>
+
+      <button class="plan-btn" id="plan-btn">Make your plan now!</button>
+    </div>
+
+    <!-- ── RIGHT PANEL ────────────────────────────────────────── -->
+    <div class="right-panel">
+      <h2 class="chart-title">Benchmark Skill Sets</h2>
+
+      <div class="chart-area">
+        <canvas id="scatter-chart"></canvas>
+      </div>
+
+      <!-- Legend table -->
+      <div class="legend-table" id="legend-table">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <script src="final.js"></script>
+</body>
+</html>

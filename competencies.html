@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PM Competency Evaluator – Select Competencies</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="competencies.css" />
+</head>
+<body>
+  <div class="container wide">
+    <header>
+      <h1>PM Competency Evaluator</h1>
+      <p class="subtitle" id="profile-label">Loading your profile…</p>
+    </header>
+
+    <main>
+      <!-- Legend -->
+      <div class="legend">
+        <span class="legend-item"><span class="badge badge-core"></span> Common Core</span>
+        <span class="legend-item"><span class="badge badge-focus"></span> Recommended Focus</span>
+        <span class="legend-item"><span class="badge badge-optional"></span> Optional</span>
+        <span class="legend-item"><span class="badge badge-selected"></span> Selected</span>
+      </div>
+
+      <!-- Competency rail -->
+      <div class="rail-wrapper">
+        <div class="rail" id="competency-rail">
+          <!-- cards injected by JS -->
+        </div>
+
+        <!-- focus bracket rendered below the rail -->
+        <div class="brackets" id="brackets">
+          <!-- brackets injected by JS -->
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="back-btn" class="btn-secondary">← Back</button>
+        <button id="confirm-btn" class="btn-primary" disabled>Confirm Selection</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="competencies.js"></script>
+</body>
+</html>
